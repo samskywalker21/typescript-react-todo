@@ -1,22 +1,17 @@
-import { useEffect, useRef } from "react";
-
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 
+import { TodoListObj } from "@/types";
+
 interface Inputs {
 	todoDesc: string;
 }
 
-interface TodoListObj {
-	todo: string;
-	active: boolean;
-}
-
 type TodoListProps = {
-	addTodo: ({ todo, active }: TodoListObj) => void;
+	addTodo: ({ todo, active }: Omit<TodoListObj, "id">) => void;
 };
 
 const TodoListForm = ({ addTodo }: TodoListProps) => {

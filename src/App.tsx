@@ -4,11 +4,7 @@ import Wrapper from "./layout/Wrapper";
 import TodoListForm from "./components/TodoListForm";
 import TodoList from "./components/TodoList";
 
-interface TodoListObj {
-	id: number;
-	todo: string;
-	active: boolean;
-}
+import { TodoListObj } from "./types";
 
 function App() {
 	const [todoList, setTodoList] = useState<TodoListObj[]>([]);
